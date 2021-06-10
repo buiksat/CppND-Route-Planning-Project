@@ -17,8 +17,9 @@ class RoutePlanner {
     // The following methods have been made public so we can test them individually.
     void AddNeighbors(RouteModel::Node *current_node);
     float CalculateHValue(RouteModel::Node const *node);
-    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *);
+    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *current_node);
     RouteModel::Node *NextNode();
+    static bool Compare(const RouteModel::Node *left, const RouteModel::Node *right);
 
   private:
     // Add private variables or methods declarations here.
@@ -28,6 +29,8 @@ class RoutePlanner {
 
     float distance = 0.0f;
     RouteModel &m_Model;
+
+
 };
 
 #endif
